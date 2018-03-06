@@ -36,6 +36,11 @@ model = seq2seq_wrapper.Seq2Seq(xseq_len=xseq_len,
                                num_layers=3
                                )
 
+# To train the model. Takes 7 to 8 hrs on a Nvidia Tesla k40 GPU ( 11 GB )
+#val_batch_gen = data_utils.rand_batch_gen(validX, validY, 32)
+#train_batch_gen = data_utils.rand_batch_gen(trainX, trainY, batch_size)
+
+
 print('Importing last session')
 sess = model.restore_last_session()
 print('Imported last session')
